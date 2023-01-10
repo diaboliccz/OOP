@@ -22,19 +22,19 @@ Input       Output
 '''
 import math
 cost = 0
-Time_List = [int(num) for num in input().split(" ", 3)]
-Entrance = Time_List[0]*60 + Time_List[1]
-Exit = Time_List[2]*60 + Time_List[3]
-Time_Use_Min = Exit - Entrance
-Time_Use_Hour = math.ceil((Exit-Entrance)/60)
+time_list = [int(num) for num in input().split(" ", 3)]
+entrance_time = time_list[0]*60 + time_list[1]
+exit_time = time_list[2]*60 + time_list[3]
+time_use_min = exit_time - entrance_time
+time_use_hour = math.ceil((exit_time-entrance_time)/60)
 
-if Time_Use_Min <= 15:
+if time_use_min <= 15:
     cost = 0
-if 15 < Time_Use_Min <= 180:
-    cost = 10*Time_Use_Hour
-if 4 <= Time_Use_Hour <= 6:
-    cost = 30+20*(Time_Use_Hour-3)
-if Time_Use_Hour > 6:
+if 15 < time_use_min <= 180:
+    cost = 10*time_use_hour
+if 4 <= time_use_hour <= 6:
+    cost = 30+20*(time_use_hour-3)
+if time_use_hour > 6:
     cost = 200
 
 print(cost)
